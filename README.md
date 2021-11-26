@@ -363,3 +363,110 @@
     background-color: brown;
   }
   ```
+
+<br />
+
+## Chapter 3: Typography
+
+### [3.1 Font Properties](https://youtu.be/uK7HfuCuQqo)
+
+- `font-size: value;` here value can be px/em/rem. 1rem=16px=100%
+- `font-weight: value;` here value can be 100/thin, 200/extra light, 300/light, 400/normal, 500/medium, 600/semi-medium, 700/bold, 800/extra bold, 900/black
+- `font-style: value;` here value can be italic/normal/oblique
+- `font-family: value;` here value can be any valid font name. In the following example paragaph will have Times New Roman as its font; if Times New Roman is not available then Times will be applied and if Times is not available then serif font will be applied. This process is known as fallback.
+
+  ```css
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Times New Roman", Times, serif;
+  }
+  ```
+
+- Use google font: https://fonts.google.com/
+
+### [3.2 Color](https://youtu.be/5_1AKxsu3-I)
+
+- `color: value;` here value can be any color names, hexadcimal colors value, RGB(Red, Green, Blue) color value, hsl (Hue, Saturation, Lightness) value
+- Color Name: we can use color names directly as shown below:
+
+  ```css
+  p {
+    color: green;
+  }
+  ```
+
+- RGB: we can use Red, Green, Blue values as shown below:
+
+  ```css
+  p {
+    color: rgb(0, 255, 0);
+  }
+  ```
+
+- Hexadecimal color: It is a code consist of 6 characters where first 2 characters for Red, Next 2 for Green and last 2 characters for Blue. Example is given below:
+
+  ```css
+  p {
+    color: #00ff00;
+    /*we can write one value instead of two similar values*/
+    color: #0f0;
+  }
+  ```
+
+- Important Tools:
+  - Color Picker: https://htmlcolorcodes.com/color-picker/
+  - Image color picker: https://imagecolorpicker.com/en
+  - How to use colorzilla plugin, how to use
+    https://flatuicolors.com/
+
+### [3.3 Text styling](https://youtu.be/oAepBeB_7OU)
+
+- `text-align: value;` here value can be center / left / right / justify
+- `text-transform: value;` here value can be uppercase / lowercase / capitalize
+- `text-decoration: value;` here value can be underline / overline / line-through / none
+- `text-shadow: value;` here value can be x axis, y axis, colorName
+- `text-indent: value;`
+- `letter-spacing: value;`
+- `word-spacing: value;`
+- `line-height: value;`  
+   Example
+
+  ```css
+  p {
+    text-align: justify;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
+    line-height: 1rem;
+    text-shadow: 0.1rem 0.1rem green;
+  }
+  ```
+
+### [3.3 Icon & emoji styling](https://youtu.be/7teTdhRIOCE)
+
+- Get emoji from here: https://unicode-table.com/en/
+- Get icon from here: https://www.iconfinder.com/
+
+  ```html
+  <style>
+    span {
+      color: red;
+      font-size: 2rem;
+    }
+  </style>
+
+  <p>I <span> ♥ </span> Bangladesh</p>
+  ```
+
+- How to use font awesome icons
+  - get font awesome icons here: https://fontawesome.com/
+  - get font awesome cdn from here: https://cdnjs.com/libraries/font-awesome
+  - add the font awesome cdn inside the html head tag and then you are ready to use font awesome icon  
+    Example
+    ```html
+    <i class="far fa-address-card"></i>
+    <i style="color: red;" class="far fa-address-card fa-2x"></i>
+    ```
