@@ -317,12 +317,49 @@
 
 - References:
   - https://www.w3.org/TR/selectors-3/#specificity
-  - https://specificity.keegan.st/
-- Count the number of IDs (a) - 100
-- Count the number of Classes, attributes, Pseudo classes (b) - 10
+  - specificity calculator: https://specificity.keegan.st/
+- Universal selector (\*) specificity - 0
 - Count the number of Elements and Pesudo elements (c) - 1
-- Example
+- Count the number of Classes, attributes, Pseudo classes (b) - 10
+- Count the number of IDs (a) - 100
+- Inline CSS - 1000
+- !important - 10000
+
+- How to calculate specificity
+
   ```css
-    *  a=0,b=0,c=0 specificity=0
-    h2 a=0,b=0,c=1 specificity=1
+  /* specificity calculator */
+  /* a=number of id  */
+  /* b=number of class, pseduo classes, attributes  */
+  /* b=number of elements, pesudo elemnts, attributes  */
+
+  /* a=0 b=0 c=1 === 001 */
+  h1 {
+    background-color: grey;
+  }
+
+  /* a=0 b=1 c=1  === 011 */
+  h1.heading {
+    background-color: blue;
+  }
+
+  /* a=0 b=1 c=0  === 010 */
+  .heading {
+    background-color: green;
+  }
+
+  /* a=1 b=1 c=0  === 100 */
+  #head {
+    background-color: red;
+  }
+
+  /* a=1 b=0 c=1  === 101 */
+  h1#head {
+    background-color: pink;
+  }
+
+  /* a=1 b=1 c=1  === 111 */
+  h1#head.heading {
+    background-color: brown;
+  }
   ```
