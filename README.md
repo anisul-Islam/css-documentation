@@ -464,7 +464,7 @@
 - How to use font awesome icons
   - get font awesome icons here: https://fontawesome.com/
   - get font awesome cdn from here: https://cdnjs.com/libraries/font-awesome
-  - add the font awesome cdn inside the html head tag and then you are ready to use font awesome icon  
+  - add the font awesome cdn inside the html head tag and then you are ready to use font awesome icons  
     Example
     ```html
     <i class="far fa-address-card"></i>
