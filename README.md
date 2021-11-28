@@ -6,11 +6,12 @@
 2. Selectors & Combinators
 3. Typography
 4. Box Model
-5. Layout Design
-6. How to desgin
-7. Animation
-8. Responsive Web Design
-9. Project
+5. Background
+6. Layout Design
+7. Responsive Web Design
+8. Animation
+9. How to create/desgin
+10. Project
 
 <br />
 
@@ -313,7 +314,14 @@
 - adjacent selectors (div + p)
 - general sibling selectors (div ~ p)
 
-### [2.4 CSS Specificity]()
+### [2.4 Pseudo class & Pseudo elements part-1](https://youtu.be/P5EzewS779M)
+
+### [2.5 Pseudo class & Pseudo elements part-2](https://youtu.be/fjDxmon-O3Q)
+
+- class: hover, focus, nth-child(),
+- elements: first-letter, first-line, after, before, selection
+
+### [2.6 CSS Specificity]()
 
 - References:
   - https://www.w3.org/TR/selectors-3/#specificity
@@ -470,3 +478,572 @@
     <i class="far fa-address-card"></i>
     <i style="color: red;" class="far fa-address-card fa-2x"></i>
     ```
+
+## Chapter 4: Box Model
+
+### [4.1 Margin](https://youtu.be/tKSQh7H-KJg)
+
+- margin-top, margin-right, margin-bottom, margin-left
+- margin
+
+### [4.2 Padding](https://youtu.be/rJVryFnIKMc)
+
+- padding-top, padding-right, padding-bottom, padding-left
+- padding
+
+### [4.3 border](https://youtu.be/6-9q_f1FgnI)
+
+- border-top, border-right, border-bottom, border-left
+- `border: borderWidth borderColor borderStyle;`
+  - example: `border: 1px green solid;`
+  - border-style
+    - border-top-style
+    - border-right-style
+    - border-bottom-style
+    - border-left-style
+  - border-width
+    - border-top-width
+    - border-right-width
+    - border-bottom-width
+    - border-left-width
+  - border-color
+    - border-top-color
+    - border-right-color
+    - border-bottom-color
+    - border-left-color
+
+### [4.4 box model](https://youtu.be/6-9q_f1FgnI)
+
+- content, padding, border, margin
+
+### [4.5 box sizing & opacity](https://youtu.be/gJ4Cv6rHhZo)
+
+- box-sizing: border-box
+- opacity: value; value can be between 0-1
+
+### [4.6 Inline, block element, width, max-width](https://youtu.be/k7jjDliVgHo)
+
+- `display: inline/block`
+
+### [4.7 overflow](https://youtu.be/GlNl1q4fS54)
+
+- `overflow: value`; here default value is visible, hidden, auto, scroll
+
+<br>
+
+## Chapter 5: Background
+
+### [5.1 How to set background image in webpage](https://youtu.be/RROYuj-xoCU)
+
+- background-image, background-position, background-size, background-repeat, background-attachment
+- shorthand: `background: bg-image position/bg-size bg-repeat bg-attachment bg-origin bg-clip `
+- example
+
+  ```css
+  body {
+    height: 80vh;
+    background-image: url("./images/me.JPG");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: #ccc;
+  }
+  ```
+
+### [5.2 gradient-linear/radial](https://youtu.be/RROYuj-xoCU)
+
+- background: linear-gradient(direction, colors)
+- example
+
+  ```css
+  .banner {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(to right, green, orange);
+  }
+  ```
+
+- background: radial-gradient(style-type, colors)
+- example
+
+  ```css
+  .banner {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, green, orange);
+  }
+  ```
+
+<br>
+
+## Chapter 6: Layout design
+
+### [6.1 float](https://youtu.be/XHnNLIlhmY0)
+
+- float: left/right
+- clear: left/right/both
+- example: create 3 div in html and add div1, div2, div3 classes with them
+
+  ```css
+  .div1 {
+    width: 50%;
+    height: 10rem;
+    background-color: orange;
+    float: left;
+  }
+  .div2 {
+    width: 50%;
+    height: 10rem;
+    background-color: plum;
+    float: left;
+  }
+  .clear-div {
+    clear: both;
+  }
+  .div3 {
+    height: 10rem;
+    background-color: burlywood;
+  }
+  ```
+
+### [6.2 Position](https://youtu.be/b1OMtaPxzmU)
+
+- `position: static(default)/absolute/relative/fixed/sticky`
+- make sure to use top, right, bottom, left property with position property
+
+### [6.3 z-index & css variables](https://youtu.be/PPkd-VvtLsk)
+
+- z-index helps us to maintain the order of stacked elements
+- `z-index: value`; value can be negative or positive
+- to declare a varibale use the following syntax
+  ```css
+  <!-- how to declare a valriable -- > :root {
+    --variable-name: value;
+  }
+  <!-- how to use css valriable -- > selector {
+    property: var(--variable-name, fallback-value);
+  }
+  ```
+- example of css variables: make sure to create 2 html div with class div1, div2
+
+  ```css
+  :root {
+    --primary-color: black;
+    --secondary-color: green;
+  }
+  .div1 {
+    width: 10rem;
+    height: 10rem;
+    background-color: black;
+    background-color: var(--primary-color);
+    position: absolute;
+    z-index: 1;
+  }
+
+  .div2 {
+    width: 10rem;
+    height: 10rem;
+    background-color: green;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: 5rem;
+    top: 5rem;
+  }
+  ```
+
+### [6.4 flexbox layout](https://youtu.be/2McU9mRBk_8)
+
+- flex layout learning game: https://flexboxfroggy.com/
+- example
+
+  ```css
+  .flex-container {
+    display: flex;
+    flex-direction: column/column-reverse/row/row-reverse;
+    flex-wrap: wrap/no-wrap;
+    justify-content: flex-start/flex-end/center/space-between/space-around;
+    align-items: flex-start/flex-end/center/space-between/space-around;
+  }
+  .flex-item1 {
+    order: 2;
+    flex-basis: 30%;
+    flex: 1;
+  }
+  .flex-item2 {
+    order: 1;
+    flex-basis: 70%;
+    flex: 2;
+  }
+  ```
+
+### [6.5 text-shadow and box-shadow](https://youtu.be/IglKvPNXxdQ)
+
+- `text-shadow: x-value y-value blur-value color`
+- `box-shadow: x-value y-value color`
+- `box-shadow: x-value y-value blur-radius color`
+- `box-shadow: inset x-value y-value color`
+
+### [6.6 How to design a card](https://youtu.be/ct0SwtTH3pc)
+
+### [6.7 Grid Layout part-1](https://youtu.be/jMzHXPpy9Ts)
+
+- example
+
+  ```css
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    <!-- grid-template-rows: 120px 110px 40px; -->
+    <!-- grid-column-gap: 10px;
+    grid-row-gap: 10px; -->
+    grid-gap: 10px;
+
+  }
+  .grid-item1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-column: 1 / 3;
+    grid-column: 1 / span 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-row: 1 / 3;
+    grid-row: 1 / span 3;
+  }
+  ```
+
+### [6.8 Grid Layout part-2](https://youtu.be/1cPT8O42ts8)
+
+- example 1
+
+  ```html
+  <head>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+      }
+      header {
+        background-color: chocolate;
+        grid-column: 1/7;
+      }
+
+      nav {
+        background-color: cornflowerblue;
+        grid-column: 1/2;
+      }
+
+      main {
+        background-color: cornsilk;
+        grid-column: 2/5;
+      }
+      aside {
+        background-color: aqua;
+        grid-column: 5/7;
+      }
+      footer {
+        background-color: burlywood;
+        grid-column: 1/7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>
+        <p>Header</p>
+      </header>
+      <nav>
+        <p>Menu</p>
+      </nav>
+      <main>
+        <p>Main</p>
+      </main>
+      <aside>
+        <p>Aside</p>
+      </aside>
+      <footer>
+        <p>footer</p>
+      </footer>
+    </div>
+  </body>
+  ```
+
+- example 2
+
+  ```html
+  <head>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "header header header header header header"
+          "nav main main main aside aside"
+          "footer footer footer footer footer footer";
+      }
+      header {
+        background-color: chocolate;
+        grid-area: header;
+      }
+
+      nav {
+        background-color: cornflowerblue;
+        grid-area: nav;
+      }
+
+      main {
+        background-color: cornsilk;
+        grid-area: main;
+      }
+      aside {
+        background-color: aqua;
+        grid-area: aside;
+      }
+      footer {
+        background-color: burlywood;
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>
+        <p>Header</p>
+      </header>
+      <nav>
+        <p>Menu</p>
+      </nav>
+      <main>
+        <p>Main</p>
+      </main>
+      <aside>
+        <p>Aside</p>
+      </aside>
+      <footer>
+        <p>footer</p>
+      </footer>
+    </div>
+  </body>
+  ```
+
+### [6.9 Grid Layout part-3](https://youtu.be/E9cjmQy3dEY)
+
+<br>
+
+## Chapter 9: How to create/design
+
+### [9.1 How to design a navigation menu](https://youtu.be/KS8EW01JE_I)
+
+- example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="nav-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
+```
+
+### [9.2 How to center elements](https://youtu.be/K92e7WcJ5Xw)
+
+- using flex
+  ```css
+  .container {
+    width: 30rem;
+    height: 30rem;
+    background-color: chocolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .child {
+    width: 50px;
+    height: 50px;
+    background-color: burlywood;
+  }
+  ```
+- using grid
+  ```css
+  .container {
+    width: 30rem;
+    height: 30rem;
+    background-color: chocolate;
+    display: grid;
+    place-items: center;
+  }
+  .child {
+    width: 50px;
+    height: 50px;
+    background-color: burlywood;
+  }
+  ```
+- using position
+
+  ```css
+  .parent-div {
+    width: 30rem;
+    height: 30rem;
+    background-color: chocolate;
+    position: relative;
+  }
+  .child-div {
+    width: 50px;
+    height: 50px;
+    background-color: burlywood;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  ```
+
+### [9.3 How to create linable icon button](https://youtu.be/blL-0Us1gWY)
+
+### [9.4 How to create drop down menu](https://youtu.be/BoOzeYtc2hI)
+
+### [9.5 How to design a table](https://youtu.be/z9a6GjqPaAk)
+
+- create a basic table first and then start styling
+- Example:
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Document</title>
+      <style>
+        table {
+          border-collapse: collapse;
+          height: 300px;
+          width: 300px;
+        }
+        td,
+        th {
+          border: 1px solid black;
+          padding: 5px;
+          text-align: center;
+          vertical-align: middle;
+        }
+
+        th {
+          background-color: darkgreen;
+          color: white;
+          height: 30px;
+          font-size: 18px;
+        }
+        tr:nth-child(odd) {
+          background-color: gray;
+        }
+        tr:nth-child(even) {
+          background-color: sandybrown;
+        }
+        tr:hover {
+          background-color: tomato;
+        }
+      </>
+    </head>
+    <body>
+      <table>
+        <caption>
+          Student details
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">GPA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>101</td>
+            <td>Anis</td>
+            <td>3.92</td>
+          </tr>
+          <tr>
+            <td>102</td>
+            <td>Rasel</td>
+            <td>3.44</td>
+          </tr>
+          <tr>
+            <td>103</td>
+            <td>Kolpona</td>
+            <td>2.44</td>
+          </tr>
+        </tbody>
+      </table>
+    </body>
+  </html>
+  ```
+
+### [9.6 How to design a form part-1](https://youtu.be/i47T2jLdm6Y)
+
+### [9.7 How to design a form part-2](https://youtu.be/i47T2jLdm6Y)
+
+- form elements styling example
+
+  ```css
+  input[type="text"] {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+    border: 0.3rem solid orange;
+    border-radius: 0.5rem;
+  }
+
+  button {
+    background-color: sandybrown;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 2rem 1rem;
+    width: 10rem;
+  }
+
+  select {
+    background-color: sandybrown;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+  }
+
+  textarea {
+    resize: none;
+    width: 50rem;
+    padding: 1rem;
+    border: 0.3rem solid black;
+    border-radius: 0.5rem;
+  }
+  ```
+
+<br>
+
+## Chapter 10: Project
+
+### Project 1 - CV Project
+
+- [Project-1 - CV Project part-1](https://youtu.be/ekIv1HfA4fs)
+- [Project-1 - CV Project part-2](https://youtu.be/GwCFFzUKIpQ)
+- [Publish a website on github](https://youtu.be/cI-B554zaRw)
+
+### Project 2 - Calculator Project
+
+- [Project-2- Calculator Project part-1](https://youtu.be/P7SnVyHKHGg)
+- [Project-2- Calculator Project part-2](https://youtu.be/5zPhBLGdJog)
