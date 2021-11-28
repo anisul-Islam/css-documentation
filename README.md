@@ -831,6 +831,121 @@
 
 <br>
 
+## Chapter 7: Responsive web design (RWD)
+
+### [7.1 Introduction to RWD](https://youtu.be/uGCrWNawEJs)
+
+- Use box-sizing `box-sizing: border-box`
+- Use media query
+- Use media end points
+
+### [7.2 Responsive navigation menu](https://youtu.be/Qx9-iow_WzM)
+
+### [7.3 Responsive column design](https://youtu.be/KH5YyDutRdA)
+
+### [7.4 Responsive web design using grid view part-1](https://youtu.be/c6stVlLz7RE)
+
+### [7.5 Responsive web design using grid view part-1](https://youtu.be/TSEyPbLuRxc)
+
+<br/>
+
+## Chapter 8: Animation
+
+### [8.1 transform property](https://youtu.be/2E0KfwIGsvQ)
+
+- transform: translate(x,y)
+- transform: scale(number)
+- transform: rotate(degree)
+- transform: skew(degree) / skewX(degree) / skewY(degree)
+- we can also use multiple transform property together like: transform: translate() rotate()
+- example :
+  ```css
+  div {
+    width: 50px;
+    height: 50px;
+    background-color: burlywood;
+    transition: 0.5s all;
+  }
+  div:hover {
+    transform: scale(3) rotate(360deg);
+  }
+  ```
+
+### [8.2 Animation property](https://youtu.be/-ksh_io77qk)
+
+- Important animation properties: `animation-name, animation-duration, animation-timing-function, animation-fill-mode, animation-iteration-count`
+
+- example
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Document</title>
+      <style>
+        .container {
+          min-height: 100vh;
+          display: grid;
+          place-items: center;
+        }
+        .circle-div {
+          width: 100px;
+          height: 100px;
+          background-color: chocolate;
+          border-radius: 50%;
+
+          animation-name: circle-anim;
+          animation-duration: 2s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: relative;
+        }
+
+        @keyframes circle-anim {
+          0% {
+            background-color: chocolate;
+            top: 0;
+            left: 0;
+          }
+          25% {
+            background-color: chocolate;
+            top: -100px;
+            left: 0;
+          }
+          50% {
+            background-color: chocolate;
+            top: 0px;
+            left: 0;
+          }
+          75% {
+            background-color: chocolate;
+            top: 100px;
+            left: 0;
+          }
+          100% {
+            background-color: rgb(30, 210, 60);
+            top: 0;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="circle-div"></div>
+      </div>
+    </body>
+  </html>
+  ```
+
+### [8.3 transition and transform](https://youtu.be/i6YvNPK0ETQ)
+
+- Important transition properties: `transition-property, transition-duration, transition-delay, transition-timing-function, transition `
+
+### [8.4 Animated progress bar](https://youtu.be/2FuiXdQcqB0)
+
+<br/>
+
 ## Chapter 9: How to create/design
 
 ### [9.1 How to design a navigation menu](https://youtu.be/KS8EW01JE_I)
@@ -1047,3 +1162,33 @@
 
 - [Project-2- Calculator Project part-1](https://youtu.be/P7SnVyHKHGg)
 - [Project-2- Calculator Project part-2](https://youtu.be/5zPhBLGdJog)
+
+### Project 3 - Portfolio Project
+
+- [Project-3- Portfolio Project part-1](https://youtu.be/bPJSGlMxFeI)
+- [Project-3- Portfolio Project part-2](https://youtu.be/o_OnE2U1mN4)
+- [Project-3- Portfolio Project part-3](https://youtu.be/i4tgWS64TAo)
+- [Project-3- Portfolio Project part-4](https://youtu.be/k1oi5iEPe7M)
+- [Project-3- Portfolio Project part-5](https://youtu.be/JmPLp_8V8SU)
+- [Project-3- Portfolio Project part-6](https://youtu.be/S3cAl-PWd_Q)
+- [Project-3- Portfolio Project part-7](https://youtu.be/_7Z_BWmKNgk)
+- [Project-3- Portfolio Project part-8](https://youtu.be/dGUfT6xV0zw)
+- [Project-3- Portfolio Project part-9](https://youtu.be/k1oi5iEPe7M)
+
+### Project 4 - Restaurant Project
+
+- [Project-4- Restaurant Project part-1](https://youtu.be/uGpYBWsx27I)
+- [Project-4- Restaurant Project part-2](https://youtu.be/x5gz38hIpBI)
+- [Project-4- Restaurant Project part-3](https://youtu.be/kUnpOmva1-c)
+
+### Project 5 - Blog website Project
+
+- [Project-5 Blog website Project part-1](https://youtu.be/tJ5LeCh9o_8)
+- [Project-5 Blog website Project part-2](https://youtu.be/RunsiJ3CFz8)
+- [Project-5 Blog website Project part-3](https://youtu.be/embcNw0HZVM)
+- [Project-5 Blog website Project part-4](https://youtu.be/tJ5LeCh9o_8)
+- [Project-5 Blog website Project part-5](https://youtu.be/wMs1LP2M-Sk)
+- [Project-5 Blog website Project part-6](https://youtu.be/5Q3zQ4RnTZA)
+- [Project-5 Blog website Project part-7](https://youtu.be/Yu1KTrklb2k)
+- [Project-5 Blog website Project part-8](https://youtu.be/tVdtVVpddIE)
+- [Project-5 Blog website Project part-9](https://youtu.be/zUxzEpvTWdU)
