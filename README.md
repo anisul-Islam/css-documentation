@@ -937,6 +937,216 @@
     </body>
   </html>
   ```
+  
+- why css animation?
+  - helps to animate web elements without js/jquery
+
+## html and css basic setup
+
+```html
+<header class="center">
+  <div class="header__circle center">Hello guys good morning!</div>
+</header>
+```
+
+```css
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  height: 100vh; /* display: flex; justify-content: center; align-items: center;
+*/
+  background-color: green;
+}
+.header__circle {
+  width: 20rem;
+  height: 20rem;
+  background-color: brown;
+  color: white; /* display: flex; justify-content:
+center; align-items: center; */ /* making circle */
+  border-radius: 50%; /*
+triangel shape width: 0; height: 0; border-left: 50px solid transparent;
+border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
+}
+```
+
+## transition property
+
+- transition properties
+
+  - transition-property
+  - transition-duration
+  - transition-delay
+  - transition-timing-function
+  - transition
+    [some animations can be attractive however sometime they can cause accessibility issues and also cause migraine]
+
+    ```css
+    /* transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: 2s;
+    */
+
+    <!-- shrothand  -->
+    transition: background-color 1s;
+    transition: background-color 1s linear;
+    transition: background-color 1s linear 0.5s;
+
+    /* default value; slow down at the end */
+    transition-timing-function: ease;
+
+    /* starts of slowly but then transition speed get fast */
+    transition-timing-function: ease-in;
+
+    /* starts of fast but then transition speed gets slow */
+    transition-timing-function: ease-out;
+
+    /* transition at an even speed */
+    transition-timing-function: linear;
+
+    /* A Cubic Bezier curve is defined by four points P0, P1, P2, and P3. */
+    /* P1 and P3 are the start and the end of the curve */
+    /* p1 and p3 values must be in the range of 0 to 1. */
+    /* it can be used with transition and animation  */
+    /* https://cubic-bezier.com/#.17,.67,.83,.67 */
+    transition-timing-function: cubic-bezier(p1, p2, p3, p4);
+    ```
+
+## transform property
+
+- transform property has 4 differnt values
+
+  - transform: scale(number)
+  - transform: rotate(degree)
+  - transform: translate(x,y)
+  - transform: skew(degree) / skewX(degree) / skewY(degree)
+
+  [we can also use multiple transform property together like: transform: translate() rotate()]
+
+  ```css
+  .header__circle {
+    width: 20rem;
+    height: 20rem;
+    background-color: brown;
+    color: white;
+
+    /* making circle  */
+    border-radius: 50%;
+
+    /* making beautiful style  */
+    border-radius: 220px 220px 40px 50px;
+
+    transition: all 0.3s linear;
+  }
+
+  /* lets add some transform properties here  */
+  .header__circle:hover {
+    background-color: orange;
+    /* transform: scale(1.2); */
+    /* transform: translate(0px, -340px); */
+    transform: rotate(25deg);
+  }
+  ```
+
+  - skew example
+
+  ```css
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    height: 100vh;
+  }
+
+  .header__circle {
+    width: 20rem;
+    height: 20rem;
+    background-color: brown;
+    color: white;
+
+    transform: skew(-5deg);
+    transition: all 0.3s linear;
+    border-radius: 0.6rem;
+  }
+
+  /* lets add some transform properties here  */
+  .header__circle:hover {
+    background-color: orange;
+    /* transform: scale(1.2); */
+    /* transform: translate(0px, -340px); */
+  }
+  ```
+
+## animation property
+
+- example
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Document</title>
+      <style>
+        .container {
+          min-height: 100vh;
+          display: grid;
+          place-items: center;
+        }
+        .circle-div {
+          width: 100px;
+          height: 100px;
+          background-color: chocolate;
+          border-radius: 50%;
+
+          animation-name: circle-anim;
+          animation-duration: 2s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: relative;
+        }
+
+        @keyframes circle-anim {
+          0% {
+            background-color: chocolate;
+            top: 0;
+            left: 0;
+          }
+          25% {
+            background-color: chocolate;
+            top: -100px;
+            left: 0;
+          }
+          50% {
+            background-color: chocolate;
+            top: 0px;
+            left: 0;
+          }
+          75% {
+            background-color: chocolate;
+            top: 100px;
+            left: 0;
+          }
+          100% {
+            background-color: rgb(30, 210, 60);
+            top: 0;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="circle-div"></div>
+      </div>
+    </body>
+  </html>
+  ```
 
 ### [8.3 transition and transform](https://youtu.be/i6YvNPK0ETQ)
 
