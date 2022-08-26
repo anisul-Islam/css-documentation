@@ -84,7 +84,7 @@
 
   ```css
   p {
-    background-color: green;
+    background-color: blue;
     color: white;
   }
   ```
