@@ -11,7 +11,8 @@
 7. Responsive Web Design
 8. Animation
 9. How to create/desgin
-10. Project
+10. CSS Architecture: BEM Methodology
+11. Project
 
 <br />
 
@@ -1272,7 +1273,9 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
 
 <br>
 
-## Chapter 10: Project
+## Chapter 10: CSS Architecture: BEM Methodology - https://github.com/anisul-Islam/bem-methodology
+
+## Chapter 11: Project
 
 ### Project 1 - CV Project
 
