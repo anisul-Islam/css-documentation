@@ -396,7 +396,6 @@
 - Use google font: https://fonts.google.com/
 
 ### [3.2 Color](https://youtu.be/5_1AKxsu3-I)
-
 - `color: value;` here value can be any color names, hexadcimal colors value, RGB(Red, Green, Blue) color value, hsl (Hue, Saturation, Lightness) value
 - Color Name: we can use color names directly as shown below:
 
@@ -425,6 +424,7 @@
   ```
 
 - Important Tools:
+  - Canva color wheel: https://www.canva.com/colors/color-wheel/
   - Color Picker: https://htmlcolorcodes.com/color-picker/
   - Image color picker: https://imagecolorpicker.com/en
   - How to use colorzilla plugin, how to use
