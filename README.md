@@ -1,6 +1,6 @@
 # My CSS Documentation
 
-### Total Chapters are following
+## Total Chapters are following
 
 1. Introduction
 2. Selectors & Combinators
@@ -270,22 +270,22 @@
     }
 
     /*for attribute name attr with exactly same value.*/
-    element[attr="value"] {
+    element[attr='value'] {
       property: value;
     }
 
     /* element with "value" anywhere in the url.*/
-    element[attr*="value"] {
+    element[attr*='value'] {
       property: value;
     }
 
     /* element with "value" anywhere in the url without case sensitivity.*/
-    element[attr*="value" i] {
+    element[attr*='value' i] {
       property: value;
     }
 
     /* element end with .value; mainly for link(a) tag.*/
-    element[attr$=".value"] {
+    element[attr$='.value'] {
       property: value;
     }
     ```
@@ -389,13 +389,14 @@
     font-size: 2rem;
     font-weight: bold;
     font-style: italic;
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Times New Roman', Times, serif;
   }
   ```
 
 - Use google font: https://fonts.google.com/
 
 ### [3.2 Color](https://youtu.be/5_1AKxsu3-I)
+
 - `color: value;` here value can be any color names, hexadcimal colors value, RGB(Red, Green, Blue) color value, hsl (Hue, Saturation, Lightness) value
 - Color Name: we can use color names directly as shown below:
 
@@ -543,7 +544,7 @@
   ```css
   body {
     height: 80vh;
-    background-image: url("./images/me.JPG");
+    background-image: url('./images/me.JPG');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -656,6 +657,8 @@
   ```
 
 ### [6.4 flexbox layout](https://youtu.be/2McU9mRBk_8)
+
+- ![flex](images/flex.png)
 
 - flex layout learning game: https://flexboxfroggy.com/
 - example
@@ -779,9 +782,9 @@
       .grid-container {
         display: grid;
         grid-template-areas:
-          "header header header header header header"
-          "nav main main main aside aside"
-          "footer footer footer footer footer footer";
+          'header header header header header header'
+          'nav main main main aside aside'
+          'footer footer footer footer footer footer';
       }
       header {
         background-color: chocolate;
@@ -851,7 +854,9 @@
 <br/>
 
 ## Chapter 8: Animation
+
 ### [8.1 ]()
+
 ### [8.2 ]()
 
 ## html and css basic setup
@@ -1234,7 +1239,7 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
 - form elements styling example
 
   ```css
-  input[type="text"] {
+  input[type='text'] {
     box-sizing: border-box;
     width: 50%;
     padding: 0.5rem 1rem;
