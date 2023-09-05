@@ -11,6 +11,12 @@
    - [Introduction to CSS](#11-introduction-to-css)
    - [Ways to add CSS](#12-ways-to-add-css)
    - [Selectors & combinators](#13-selectors--combinators)
+   - [CSS Specificity](#14-css-specificity)
+   - [Typography](#15-typography)
+   - [Box Model](#16-box-model)
+     - [box-sizing, opacity, overflow](#162-box-sizing--opacity-overflow)
+     - [display-properties](#163-display-properties)
+   - [Box Model](#16-box-model)
 
 2. [Intermediate CSS]()
 3. [Advanced CSS]()
@@ -304,7 +310,7 @@
   - Link Pseudo classes: link, visited, hover, active
   - Input Pseudo classes: focus, enabled, disabled, checked, required, optional, valid, invalid
   - General Pseudo classes: first-child, last-child, first-of-type, last-of-type, nth-child(n), nth-last-child(n), nth-last-of-type(n), root, not
-  - References: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+  - [References](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
   - syntax for Pseudo class selectors
 
     ```css
@@ -316,7 +322,7 @@
 - Pseudo element selectors
 
   - Common Pseudo element: after, before, first-letter, first-line, placeholder, select
-  - References: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+  - [References](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
   - syntax for Pseudo element selectors
 
     ```css
@@ -330,19 +336,20 @@
 - adjacent selectors (div + p)
 - general sibling selectors (div ~ p)
 
-### [2.6 CSS Specificity]()
+## 1.4 CSS Specificity
 
-- References:
-  - https://www.w3.org/TR/selectors-3/#specificity
-  - specificity calculator: https://specificity.keegan.st/
-- Universal selector (\*) specificity - 0
-- Count the number of Elements and Pesudo elements (c) - 1
-- Count the number of Classes, attributes, Pseudo classes (b) - 10
-- Count the number of IDs (a) - 100
-- Inline CSS - 1000
-- !important - 10000
+- [References](https://www.w3.org/TR/selectors-3/#specificity)
+
+  - [specificity calculator](https://specificity.keegan.st/)
 
 - How to calculate specificity
+
+  - Universal selector (\*) specificity - 0
+  - Count the number of Elements and Pesudo elements (c) - 1
+  - Count the number of Classes, attributes, Pseudo classes (b) - 10
+  - Count the number of IDs (a) - 100
+  - Inline CSS - 1000
+  - !important - 10000
 
   ```css
   /* specificity calculator */
@@ -381,11 +388,9 @@
   }
   ```
 
-<br />
+## 1.5 Typography
 
-## Chapter 3: Typography
-
-### [3.1 Font Properties](https://youtu.be/uK7HfuCuQqo)
+### Font Properties
 
 - `font-size: value;` here value can be px/em/rem. 1rem=16px=100%
 - `font-weight: value;` here value can be 100/thin, 200/extra light, 300/light, 400/normal, 500/medium, 600/semi-medium, 700/bold, 800/extra bold, 900/black
@@ -401,11 +406,11 @@
   }
   ```
 
-- Use google font: https://fonts.google.com/
+- [Use google font](https://fonts.google.com/)
 
-### [3.2 Color](https://youtu.be/5_1AKxsu3-I)
+### How to use Color
 
-- `color: value;` here value can be any color names, hexadcimal colors value, RGB(Red, Green, Blue) color value, hsl (Hue, Saturation, Lightness) value
+- Syntax: `color: value;` here value can be any color names, hexadcimal colors value, RGB(Red, Green, Blue) color value, hsl (Hue, Saturation, Lightness) value
 - Color Name: we can use color names directly as shown below:
 
   ```css
@@ -433,13 +438,12 @@
   ```
 
 - Important Tools:
-  - Canva color wheel: https://www.canva.com/colors/color-wheel/
-  - Color Picker: https://htmlcolorcodes.com/color-picker/
-  - Image color picker: https://imagecolorpicker.com/en
-  - How to use colorzilla plugin, how to use
-    https://flatuicolors.com/
+  - [Canva color wheel](https://www.canva.com/colors/color-wheel/)
+  - [Color Picker](https://htmlcolorcodes.com/color-picker/)
+  - [Image color picker](https://imagecolorpicker.com/en)
+  - https://flatuicolors.com/
 
-### [3.3 Text styling](https://youtu.be/oAepBeB_7OU)
+### Text styling
 
 - `text-align: value;` here value can be center / left / right / justify
 - `text-transform: value;` here value can be uppercase / lowercase / capitalize
@@ -463,7 +467,7 @@
   }
   ```
 
-### [3.3 Icon & emoji styling](https://youtu.be/7teTdhRIOCE)
+### Icon & emoji styling
 
 - Get emoji from here: https://unicode-table.com/en/
 - Get icon from here: https://www.iconfinder.com/
@@ -480,66 +484,66 @@
   ```
 
 - How to use font awesome icons
-  - get font awesome icons here: https://fontawesome.com/
-  - get font awesome cdn from here: https://cdnjs.com/libraries/font-awesome
+
+  - [get font awesome icons](https://fontawesome.com/)
+  - [get font awesome cdn](https://cdnjs.com/libraries/font-awesome)
   - add the font awesome cdn inside the html head tag and then you are ready to use font awesome icons  
     Example
+
     ```html
     <i class="far fa-address-card"></i>
     <i style="color: red;" class="far fa-address-card fa-2x"></i>
     ```
 
-## Chapter 4: Box Model
+## 1.6 Box Model
 
-### [4.1 Margin](https://youtu.be/tKSQh7H-KJg)
+![box model](images/box%20model.png)
 
-- margin-top, margin-right, margin-bottom, margin-left
-- margin
+- Box model consist of content, padding, border, margin. Total Width = Content Width + Padding + Border + Margin. Total Width = 200px + 10px + 2px + 20px = 232px
 
-### [4.2 Padding](https://youtu.be/rJVryFnIKMc)
+  - Content: This is the innermost layer of the box and represents the actual content of the HTML element, such as text, images, or other media. The content area is defined by the element's width and height properties.
+  - Padding: This is the space between the content area and the element's border. It can be set using properties like padding-top, padding-right, padding-bottom, and padding-left. Padding helps control the spacing inside the element.
+  - Border: The border surrounds the padding and content areas and is defined by properties like border-width, border-style, and border-color. Borders can be used to create visual boundaries around elements. border-top, border-right, border-bottom, border-left. Syntax: `border: borderWidth borderColor borderStyle;`
+    - example: `border: 1px green solid;`
+    - border-style: border-top-style, border-right-style, border-bottom-style, border-left-style
+    - border-width,border-top-width,border-right-width,border-bottom-width,border-left-width
+    - border-color,border-top-color,border-right-color,border-bottom-color,border-left-color
+  - Margin: Margin is the space outside the element's border. It can be set using properties like margin-top, margin-right, margin-bottom, and margin-left. Margins are used to control the spacing between elements on a webpage.
 
-- padding-top, padding-right, padding-bottom, padding-left
-- padding
+### 1.6.2 box sizing & opacity, overflow:
 
-### [4.3 border](https://youtu.be/6-9q_f1FgnI)
+- box-sizing: border-box (padding and border are subtracted from the width and height of an element), content-box (default one)
+- `opacity: value;` value can be between 0-1
+- `overflow: value;` here default value is visible but we can use also hidden, auto, scroll
 
-- border-top, border-right, border-bottom, border-left
-- `border: borderWidth borderColor borderStyle;`
-  - example: `border: 1px green solid;`
-  - border-style
-    - border-top-style
-    - border-right-style
-    - border-bottom-style
-    - border-left-style
-  - border-width
-    - border-top-width
-    - border-right-width
-    - border-bottom-width
-    - border-left-width
-  - border-color
-    - border-top-color
-    - border-right-color
-    - border-bottom-color
-    - border-left-color
+### 1.6.3 display properties
 
-### [4.4 box model](https://youtu.be/6-9q_f1FgnI)
+- It is used to control how an HTML element is rendered on a web page.
+- block: Elements with display: block create a block-level box. They typically start on a new line and stretch across the entire width of their parent container, stacking vertically. Examples include <div>, <p>, and <h1>.
 
-- content, padding, border, margin
+- inline: Elements with display: inline generate an inline-level box. They flow within the content, appearing on the same line as adjacent inline elements. Examples include <span>, <a>, and <strong>.
+- inline-block: Elements with display: inline-block create a combination of inline and block-level behavior. They flow inline like inline elements but can have their own width and height, similar to block-level elements. This is useful for creating inline elements that can be styled with width and height properties.
 
-### [4.5 box sizing & opacity](https://youtu.be/gJ4Cv6rHhZo)
+- none: Elements with display: none are not displayed on the page at all. They are effectively hidden and do not take up any space in the layout. This is commonly used for hiding elements dynamically with JavaScript.
 
-- box-sizing: border-box
-- opacity: value; value can be between 0-1
+- table: Elements with display: table mimic the behavior of HTML <table> elements, creating table-like structures. This value is often used in conjunction with other display values like table-row and table-cell for building table layouts without using actual <table> elements.
 
-### [4.6 Inline, block element, width, max-width](https://youtu.be/k7jjDliVgHo)
+- flex: Elements with display: flex become flexible containers. They allow their child elements to be distributed and aligned within them, making it easier to create responsive layouts with elements that grow or shrink as needed.
 
-- `display: inline/block`
+- grid: Elements with display: grid create grid containers. They enable two-dimensional layout control, allowing you to arrange child elements in rows and columns. This is especially useful for complex layouts.
 
-### [4.7 overflow](https://youtu.be/GlNl1q4fS54)
+### width vs max-width
 
-- `overflow: value`; here default value is visible, hidden, auto, scroll
+- The width property sets the explicit width of an element. You specify an exact width value in pixels, percentages, ems, or other supported units.
+- The max-width property, on the other hand, sets an upper limit for the width of an element. You specify a maximum width value, just like you do with the width property.
+- In many cases, you'll use both width and max-width properties together to create responsive layouts. For example, you might set a width for a container to define its default size and a max-width to ensure it doesn't become too wide on larger screens.
 
-<br>
+```css
+.container {
+  width: 300px; /* Default width */
+  max-width: 100%; /* Maximum width to adapt to screen size */
+}
+```
 
 ## Chapter 5: Background
 
