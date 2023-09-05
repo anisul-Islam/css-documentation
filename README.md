@@ -1,9 +1,22 @@
-# My CSS Documentation
+# CSS Documentation
+
+- [CSS Full Course with a project | Zero to Hero | English Tutorial](https://youtu.be/lXYo52yFLDk)
+- [CSS complete course Bangla (Beginner to Advanced)](https://youtube.com/playlist?list=PLgH5QX0i9K3qjCBXjTmv7Xeh8MDUUVJDO)
+- [CSS eCommerce Project Bangla](https://youtube.com/playlist?list=PLgH5QX0i9K3rsTE0J6lv99JsJHlPlIvSC)
+
+## Table of Contents
+
+1. [Basic CSS](#1-basic-css)
+
+   - [Introduction to CSS](#11-introduction-to-css)
+   - [Ways to add CSS](#12-ways-to-add-css)
+   - [Selectors & combinators](#13-selectors--combinators)
+
+2. [Intermediate CSS]()
+3. [Advanced CSS]()
 
 ## Total Chapters are following
 
-1. Introduction
-2. Selectors & Combinators
 3. Typography
 4. Box Model
 5. Background
@@ -14,11 +27,12 @@
 10. CSS Architecture: BEM Methodology
 11. Project
 
-<br />
+## 1. Basic CSS
 
-## Chapter 1: Introduction
+### 1.1 Introduction to CSS
 
-### [1.1 Introduction to CSS](https://youtu.be/_5TU7eXKeyk)
+- Understand what CSS (Cascading Style Sheets) is and its role in web development.
+- Learn how CSS works alongside HTML to style and format web pages.
 
 #### What is CSS & Why CSS?
 
@@ -26,9 +40,12 @@
 - It is used to style **html elements**
 - Initial release on December 17, 1996
 
-### [1.2 Inline CSS](https://youtu.be/9U--RckH_IM)
+### 1.2 Ways to Add CSS
 
 - 3 main ways to add css with html: Inline CSS, Internal CSS, External CSS
+
+#### Inline CSS
+
 - Inline CSS refers to style inside html element. Syntax: `<tagName style="property:value; property:value; ... ">`
 - Inline CSS Example is given below:
 
@@ -42,7 +59,7 @@
   </p>
   ```
 
-### [1.3 Internal CSS](https://youtu.be/7mQnjm8PI2w)
+#### Internal CSS
 
 - Inside `<head>` tag we can use internal css with the help of `<style>` tag
 - Internal CSS Syntax:
@@ -78,7 +95,7 @@
   </html>
   ```
 
-### [1.4 Exetrnal CSS](https://youtu.be/f9vqFrO-iXM)
+#### Exetrnal CSS
 
 - Inside `<head>` tag we can link the external css file with the help of `<link rel="stylesheet" href="cssFileNameOrAddressHere"/> tag`
 - create a css file with an extension of .css as shown below: style.css
@@ -103,11 +120,7 @@
   </body>
   ```
 
-<br />
-
-## Chapter 2: Selectors & Combinators
-
-### [2.1 Basic Selectors ](https://youtu.be/T4HuTcVgcFI)
+## 1.3 Selectors & Combinators
 
 - Basic Selectors: Element Selector, grouping selectors, nested selector, Universal Selector, ID selectors, class selectors,
 - Element selector: select an element by using its name.  
@@ -222,41 +235,37 @@
   </body>
   ```
 
-### [2.2 More on Class & ID Selectors ](https://youtu.be/c3ha4Dq_tdA)
+  - we can use multiple class name for an html element such as `<h1 class="style1 style2" > this is something </h1>`
+  - selecting elements with class name, id name example is given below:
 
-- we can use multiple class name for an html element such as `<h1 class="style1 style2" > this is something </h1>`
-- selecting elements with class name, id name example is given below:
-
-  ```html
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <title>Learn Internal CSS</title>
-      <style>
-        .heading h1 {
-          background-color: salmon;
-          color: white;
-        }
-        #heading2 p {
-          background-color: green;
-          color: white;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="heading">
-        <h1>Hello CSS</h1>
-        <p>aperiam fugiat blanditiis voluptatibus quo!</p>
-      </div>
-      <div id="heading2">
-        <h1>Hello CSS</h1>
-        <p>aperiam fugiat blanditiis voluptatibus quo!</p>
-      </div>
-    </body>
-  </html>
-  ```
-
-### [2.3 Selectors & Combinators](https://youtu.be/tzsteHDBb9g)
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <title>Learn Internal CSS</title>
+        <style>
+          .heading h1 {
+            background-color: salmon;
+            color: white;
+          }
+          #heading2 p {
+            background-color: green;
+            color: white;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="heading">
+          <h1>Hello CSS</h1>
+          <p>aperiam fugiat blanditiis voluptatibus quo!</p>
+        </div>
+        <div id="heading2">
+          <h1>Hello CSS</h1>
+          <p>aperiam fugiat blanditiis voluptatibus quo!</p>
+        </div>
+      </body>
+    </html>
+    ```
 
 - Attribute selectors
 
@@ -291,36 +300,35 @@
     ```
 
 - Pseudo class selectors
+
   - Link Pseudo classes: link, visited, hover, active
   - Input Pseudo classes: focus, enabled, disabled, checked, required, optional, valid, invalid
   - General Pseudo classes: first-child, last-child, first-of-type, last-of-type, nth-child(n), nth-last-child(n), nth-last-of-type(n), root, not
   - References: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
   - syntax for Pseudo class selectors
+
     ```css
     selector:pseudo-class {
       property: value;
     }
     ```
+
 - Pseudo element selectors
+
   - Common Pseudo element: after, before, first-letter, first-line, placeholder, select
   - References: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
   - syntax for Pseudo element selectors
+
     ```css
     selector::pseudo-element {
     property: value;
     }
     -- Child selectors (div > p)
     ```
+
 - descendent selectors (div p)
 - adjacent selectors (div + p)
 - general sibling selectors (div ~ p)
-
-### [2.4 Pseudo class & Pseudo elements part-1](https://youtu.be/P5EzewS779M)
-
-### [2.5 Pseudo class & Pseudo elements part-2](https://youtu.be/fjDxmon-O3Q)
-
-- class: hover, focus, nth-child(),
-- elements: first-letter, first-line, after, before, selection
 
 ### [2.6 CSS Specificity]()
 
