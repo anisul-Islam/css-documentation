@@ -17,22 +17,25 @@
      - [box-sizing, opacity, overflow, Visibility](#162-box-sizing-opacity-overflow-visibility)
      - [display-properties](#163-display-properties)
    - [background properties](#17-background-properties)
-   - [Box Model](#16-box-model)
+   - [Basic Layout](#18-basic-layout)
+     - [Float](#181-float)
+     - [Positioning](#182-position)
+     - [z-index & css variables](#183-z-index--css-variables)
+     - [text-shadow and box-shadow](#184-text-shadow-and-box-shadow)
+     - [design a card](#185-card-design)
 
-2. [Intermediate CSS]()
-3. [Advanced CSS]()
-
-## Total Chapters are following
-
-3. Typography
-4. Box Model
-5. Background
-6. Layout Design
-7. Responsive Web Design
-8. Animation
-9. How to create/desgin
-10. CSS Architecture: BEM Methodology
-11. Project
+2. [Intermediate CSS](#2-intermediate-css)
+   - [Flex Layout](#21-flexbox-layout)
+   - [Grid Layout](#22-grid-layout)
+   - [Responsive Web design](#23-responsive-web-design-rwd)
+   - [Transform Properties](#24-transform-property)
+   - [Transition Properties](#25-transition-property)
+   - [Animation Properties](#26-animation-property)
+   - [Styling tables and forms](#27-styling-tables-and-forms)
+3. [Advanced CSS](#3-advanced-css)
+   - [CSS Architecture]()
+   - [Ecommerce projects]()
+   - [Performance Optimization]()
 
 ## 1. Basic CSS
 
@@ -127,7 +130,7 @@
   </body>
   ```
 
-## 1.3 Selectors & Combinators
+### 1.3 Selectors & Combinators
 
 - Basic Selectors: Element Selector, grouping selectors, nested selector, Universal Selector, ID selectors, class selectors,
 - Element selector: select an element by using its name.  
@@ -337,7 +340,7 @@
 - adjacent selectors (div + p)
 - general sibling selectors (div ~ p)
 
-## 1.4 CSS Specificity
+### 1.4 CSS Specificity
 
 - [References](https://www.w3.org/TR/selectors-3/#specificity)
 
@@ -389,9 +392,9 @@
   }
   ```
 
-## 1.5 Typography
+### 1.5 Typography
 
-### Font Properties
+#### Font Properties
 
 - `font-size: value;` here value can be px/em/rem. 1rem=16px=100%
 - `font-weight: value;` here value can be 100/thin, 200/extra light, 300/light, 400/normal, 500/medium, 600/semi-medium, 700/bold, 800/extra bold, 900/black
@@ -409,7 +412,7 @@
 
 - [Use google font](https://fonts.google.com/)
 
-### How to use Color
+#### How to use Color
 
 - Syntax: `color: value;` here value can be any color names, hexadcimal colors value, RGB(Red, Green, Blue) color value, hsl (Hue, Saturation, Lightness) value
 - Color Name: we can use color names directly as shown below:
@@ -444,7 +447,7 @@
   - [Image color picker](https://imagecolorpicker.com/en)
   - https://flatuicolors.com/
 
-### Text styling
+#### Text styling
 
 - `text-align: value;` here value can be center / left / right / justify
 - `text-transform: value;` here value can be uppercase / lowercase / capitalize
@@ -468,7 +471,7 @@
   }
   ```
 
-### Icon & emoji styling
+#### Icon & emoji styling
 
 - [Get emoji from here](https://unicode-table.com/en/)
 - [Get icon from here](https://www.iconfinder.com/)
@@ -496,7 +499,7 @@
     <i style="color: red;" class="far fa-address-card fa-2x"></i>
     ```
 
-## 1.6 Box Model
+### 1.6 Box Model
 
 ![box model](images/box%20model.png)
 
@@ -511,14 +514,14 @@
     - border-color,border-top-color,border-right-color,border-bottom-color,border-left-color
   - Margin: Margin is the space outside the element's border. It can be set using properties like margin-top, margin-right, margin-bottom, and margin-left. Margins are used to control the spacing between elements on a webpage.
 
-### 1.6.2 box sizing, opacity, overflow, visibility
+#### 1.6.2 box sizing, opacity, overflow, visibility
 
 - box-sizing: border-box (padding and border are subtracted from the width and height of an element), content-box (default one)
 - `opacity: value;` value can be between 0-1
 - `overflow: value;` here default value is visible but we can use also hidden, auto, scroll
 - The visibility property in CSS is used to control the visibility of an HTML element. It can take one of the following values: visibile, hidden, none
 
-### 1.6.3 display properties
+#### 1.6.3 display properties
 
 - It is used to control how an HTML element is rendered on a web page.
 - block: Elements with display: block create a block-level box. They typically start on a new line and stretch across the entire width of their parent container, stacking vertically. Examples include `<div>`, `<p>`, and `<h1>`.
@@ -535,7 +538,7 @@
 
 - grid: Elements with display: grid create grid containers. They enable two-dimensional layout control, allowing you to arrange child elements in rows and columns. This is especially useful for complex layouts.
 
-### width vs max-width
+#### width vs max-width
 
 - The width property sets the explicit width of an element. You specify an exact width value in pixels, percentages, ems, or other supported units.
 - The max-width property, on the other hand, sets an upper limit for the width of an element. You specify a maximum width value, just like you do with the width property.
@@ -548,7 +551,7 @@
 }
 ```
 
-## 1.7 background properties
+### 1.7 background properties
 
 - CSS provides several background properties that allow you to control the background of HTML elements, such as text boxes, divs, and entire web pages. These properties enable you to set background colors, images, gradients, and other visual effects.
 
@@ -652,54 +655,80 @@
     }
     ```
 
-## Chapter 6: Layout design
+### 1.8 Basic Layout
 
-### [6.1 float](https://youtu.be/XHnNLIlhmY0)
+#### 1.8.1 float
 
-- float: left/right
-- clear: left/right/both
-- example: create 3 div in html and add div1, div2, div3 classes with them
+- The float property in CSS is used to control the horizontal positioning and layout of elements within their containing elements. It allows elements to "float" to the left or right of their normal position in the document flow, causing text and other elements to flow around them.
+
+  - example: create 3 div in html and add div1, div2, div3 classes with them
+
+  ```html
+  <div class="row">
+    <div class="col">
+      <h2>col1</h2>
+      <p>Lorem</p>
+    </div>
+    <div class="col">
+      <h2>col2</h2>
+      <p>Lorem ipsum dolor</p>
+    </div>
+    <div class="col">
+      <h2>col3</h2>
+      <p>Lorem ipsum dolor sit,</p>
+    </div>
+  </div>
+  ```
 
   ```css
-  .div1 {
-    width: 50%;
-    height: 10rem;
-    background-color: orange;
-    float: left;
+  .row {
+    padding: 1rem;
   }
-  .div2 {
-    width: 50%;
-    height: 10rem;
-    background-color: plum;
+  .col {
     float: left;
+    width: 31%;
+    background-color: bisque;
+    padding: 0.5rem;
   }
-  .clear-div {
+  .row::after {
+    content: '';
+    display: table;
     clear: both;
-  }
-  .div3 {
-    height: 10rem;
-    background-color: burlywood;
   }
   ```
 
-### [6.2 Position](https://youtu.be/b1OMtaPxzmU)
+#### 1.8.2 Position
 
-- `position: static(default)/absolute/relative/fixed/sticky`
-- make sure to use top, right, bottom, left property with position property
+- The position property in CSS is used to control the positioning of HTML elements within their containing elements or relative to the viewport. It's a fundamental property for layout and allows you to create complex and responsive designs.
+  - `position: static(default)/absolute/relative/fixed/sticky`
+  - make sure to use top, right, bottom, left property with position property
+  - relative position: relative are still positioned in the normal document flow, but you can adjust their position using the top, right, bottom, or left properties. The element is moved relative to its normal position.
+  - fixed position: fixed are also taken out of the normal document flow and are positioned relative to the viewport. They remain in a fixed position even when the page is scrolled.
+  - sticky position: sticky behave like relative within their container until they reach a specified scroll position. Once the element reaches that position, it becomes fixed until the container is scrolled out of view.
+- center elements using relative and absolute position
 
-### [6.3 z-index & css variables](https://youtu.be/PPkd-VvtLsk)
+  ```css
+  .parent {
+    background-color: green;
+    height: 20rem;
+    width: 20rem;
+    position: relative;
+  }
+  .child {
+    background-color: red;
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  ```
+
+#### 1.8.3 z-index & css variables
 
 - z-index helps us to maintain the order of stacked elements
 - `z-index: value`; value can be negative or positive
-- to declare a varibale use the following syntax
-  ```css
-  <!-- how to declare a valriable -- > :root {
-    --variable-name: value;
-  }
-  <!-- how to use css valriable -- > selector {
-    property: var(--variable-name, fallback-value);
-  }
-  ```
 - example of css variables: make sure to create 2 html div with class div1, div2
 
   ```css
@@ -727,7 +756,22 @@
   }
   ```
 
-### [6.4 flexbox layout](https://youtu.be/2McU9mRBk_8)
+#### 1.8.4 text-shadow and box-shadow
+
+- `text-shadow: x-value y-value blur-value color`
+- `box-shadow: x-value y-value color`
+- `box-shadow: x-value y-value blur-radius color`
+- `box-shadow: inset x-value y-value color`
+
+#### 1.8.5 Card Design
+
+```css
+
+```
+
+## 2. Intermediate CSS
+
+### 2.1 flexbox layout
 
 - ![flex](images/flex.png)
 
@@ -754,16 +798,7 @@
   }
   ```
 
-### [6.5 text-shadow and box-shadow](https://youtu.be/IglKvPNXxdQ)
-
-- `text-shadow: x-value y-value blur-value color`
-- `box-shadow: x-value y-value color`
-- `box-shadow: x-value y-value blur-radius color`
-- `box-shadow: inset x-value y-value color`
-
-### [6.6 How to design a card](https://youtu.be/ct0SwtTH3pc)
-
-### [6.7 Grid Layout part-1](https://youtu.be/jMzHXPpy9Ts)
+### 2.2 Grid Layout
 
 - example
 
@@ -789,9 +824,7 @@
   }
   ```
 
-### [6.8 Grid Layout part-2](https://youtu.be/1cPT8O42ts8)
-
-- example 1
+- example 2
 
   ```html
   <head>
@@ -845,7 +878,7 @@
   </body>
   ```
 
-- example 2
+- example 3
 
   ```html
   <head>
@@ -902,109 +935,13 @@
   </body>
   ```
 
-### [6.9 Grid Layout part-3](https://youtu.be/E9cjmQy3dEY)
-
-<br>
-
-## Chapter 7: Responsive web design (RWD)
-
-### [7.1 Introduction to RWD](https://youtu.be/uGCrWNawEJs)
+### 2.3 Responsive web design (RWD)
 
 - Use box-sizing `box-sizing: border-box`
 - Use media query
 - Use media end points
 
-### [7.2 Responsive navigation menu](https://youtu.be/Qx9-iow_WzM)
-
-### [7.3 Responsive column design](https://youtu.be/KH5YyDutRdA)
-
-### [7.4 Responsive web design using grid view part-1](https://youtu.be/c6stVlLz7RE)
-
-### [7.5 Responsive web design using grid view part-1](https://youtu.be/TSEyPbLuRxc)
-
-<br/>
-
-## Chapter 8: Animation
-
-### [8.1 ]()
-
-### [8.2 ]()
-
-## html and css basic setup
-
-```html
-<header class="center">
-  <div class="header__circle center">Hello guys good morning!</div>
-</header>
-```
-
-```css
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header {
-  height: 100vh; /* display: flex; justify-content: center; align-items: center;
-*/
-  background-color: green;
-}
-.header__circle {
-  width: 20rem;
-  height: 20rem;
-  background-color: brown;
-  color: white; /* display: flex; justify-content:
-center; align-items: center; */ /* making circle */
-  border-radius: 50%; /*
-triangel shape width: 0; height: 0; border-left: 50px solid transparent;
-border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
-}
-```
-
-## transition property
-
-- transition properties
-
-  - transition-property
-  - transition-duration
-  - transition-delay
-  - transition-timing-function
-  - transition
-    [some animations can be attractive however sometime they can cause accessibility issues and also cause migraine]
-
-    ```css
-    /* transition-property: background-color;
-    transition-duration: 1s;
-    transition-timing-function: linear;
-    transition-delay: 2s;
-    */
-
-    <!-- shrothand  -->
-    transition: background-color 1s;
-    transition: background-color 1s linear;
-    transition: background-color 1s linear 0.5s;
-
-    /* default value; slow down at the end */
-    transition-timing-function: ease;
-
-    /* starts of slowly but then transition speed get fast */
-    transition-timing-function: ease-in;
-
-    /* starts of fast but then transition speed gets slow */
-    transition-timing-function: ease-out;
-
-    /* transition at an even speed */
-    transition-timing-function: linear;
-
-    /* A Cubic Bezier curve is defined by four points P0, P1, P2, and P3. */
-    /* P1 and P3 are the start and the end of the curve */
-    /* p1 and p3 values must be in the range of 0 to 1. */
-    /* it can be used with transition and animation  */
-    /* https://cubic-bezier.com/#.17,.67,.83,.67 */
-    transition-timing-function: cubic-bezier(p1, p2, p3, p4);
-    ```
-
-## transform property
+### 2.4 transform property
 
 - transform property has 4 differnt values
 
@@ -1072,7 +1009,50 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
   }
   ```
 
-## animation property
+### 2.5 transition property
+
+- transition properties
+
+  - transition-property
+  - transition-duration
+  - transition-delay
+  - transition-timing-function
+  - transition
+    [some animations can be attractive however sometime they can cause accessibility issues and also cause migraine]
+
+    ```css
+    /* transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: 2s;
+    */
+
+    <!-- shrothand  -->
+    transition: background-color 1s;
+    transition: background-color 1s linear;
+    transition: background-color 1s linear 0.5s;
+
+    /* default value; slow down at the end */
+    transition-timing-function: ease;
+
+    /* starts of slowly but then transition speed get fast */
+    transition-timing-function: ease-in;
+
+    /* starts of fast but then transition speed gets slow */
+    transition-timing-function: ease-out;
+
+    /* transition at an even speed */
+    transition-timing-function: linear;
+
+    /* A Cubic Bezier curve is defined by four points P0, P1, P2, and P3. */
+    /* P1 and P3 are the start and the end of the curve */
+    /* p1 and p3 values must be in the range of 0 to 1. */
+    /* it can be used with transition and animation  */
+    /* https://cubic-bezier.com/#.17,.67,.83,.67 */
+    transition-timing-function: cubic-bezier(p1, p2, p3, p4);
+    ```
+
+### 2.6 animation property
 
 - example
 
@@ -1137,13 +1117,154 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
   </html>
   ```
 
-### [8.3 transition and transform](https://youtu.be/i6YvNPK0ETQ)
+### 2.7 Styling Tables and Forms
 
-- Important transition properties: `transition-property, transition-duration, transition-delay, transition-timing-function, transition `
+- create a basic table first and then start styling
+- Example:
 
-### [8.4 Animated progress bar](https://youtu.be/2FuiXdQcqB0)
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Document</title>
+      <style>
+        table {
+          border-collapse: collapse;
+          height: 300px;
+          width: 300px;
+        }
+        td,
+        th {
+          border: 1px solid black;
+          padding: 5px;
+          text-align: center;
+          vertical-align: middle;
+        }
 
-<br/>
+        th {
+          background-color: darkgreen;
+          color: white;
+          height: 30px;
+          font-size: 18px;
+        }
+        tr:nth-child(odd) {
+          background-color: gray;
+        }
+        tr:nth-child(even) {
+          background-color: sandybrown;
+        }
+        tr:hover {
+          background-color: tomato;
+        }
+      </>
+    </head>
+    <body>
+      <table>
+        <caption>
+          Student details
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">GPA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>101</td>
+            <td>Anis</td>
+            <td>3.92</td>
+          </tr>
+          <tr>
+            <td>102</td>
+            <td>Rasel</td>
+            <td>3.44</td>
+          </tr>
+          <tr>
+            <td>103</td>
+            <td>Kolpona</td>
+            <td>2.44</td>
+          </tr>
+        </tbody>
+      </table>
+    </body>
+  </html>
+  ```
+
+- form elements styling example
+
+  ```css
+  input[type='text'] {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+    border: 0.3rem solid orange;
+    border-radius: 0.5rem;
+  }
+
+  button {
+    background-color: sandybrown;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 2rem 1rem;
+    width: 10rem;
+  }
+
+  select {
+    background-color: sandybrown;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+  }
+
+  textarea {
+    resize: none;
+    width: 50rem;
+    padding: 1rem;
+    border: 0.3rem solid black;
+    border-radius: 0.5rem;
+  }
+  ```
+
+## 3. Advanced CSS
+
+## html and css basic setup
+
+```html
+<header class="center">
+  <div class="header__circle center">Hello guys good morning!</div>
+</header>
+```
+
+```css
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  height: 100vh; /* display: flex; justify-content: center; align-items: center;
+*/
+  background-color: green;
+}
+.header__circle {
+  width: 20rem;
+  height: 20rem;
+  background-color: brown;
+  color: white; /* display: flex; justify-content:
+center; align-items: center; */ /* making circle */
+  border-radius: 50%; /*
+triangel shape width: 0; height: 0; border-left: 50px solid transparent;
+border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
+}
+```
 
 ## Chapter 9: How to create/design
 
@@ -1227,128 +1348,6 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
 
 ### [9.4 How to create drop down menu](https://youtu.be/BoOzeYtc2hI)
 
-### [9.5 How to design a table](https://youtu.be/z9a6GjqPaAk)
-
-- create a basic table first and then start styling
-- Example:
-
-  ```html
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <title>Document</title>
-      <style>
-        table {
-          border-collapse: collapse;
-          height: 300px;
-          width: 300px;
-        }
-        td,
-        th {
-          border: 1px solid black;
-          padding: 5px;
-          text-align: center;
-          vertical-align: middle;
-        }
-
-        th {
-          background-color: darkgreen;
-          color: white;
-          height: 30px;
-          font-size: 18px;
-        }
-        tr:nth-child(odd) {
-          background-color: gray;
-        }
-        tr:nth-child(even) {
-          background-color: sandybrown;
-        }
-        tr:hover {
-          background-color: tomato;
-        }
-      </>
-    </head>
-    <body>
-      <table>
-        <caption>
-          Student details
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">GPA</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>101</td>
-            <td>Anis</td>
-            <td>3.92</td>
-          </tr>
-          <tr>
-            <td>102</td>
-            <td>Rasel</td>
-            <td>3.44</td>
-          </tr>
-          <tr>
-            <td>103</td>
-            <td>Kolpona</td>
-            <td>2.44</td>
-          </tr>
-        </tbody>
-      </table>
-    </body>
-  </html>
-  ```
-
-### [9.6 How to design a form part-1](https://youtu.be/i47T2jLdm6Y)
-
-### [9.7 How to design a form part-2](https://youtu.be/i47T2jLdm6Y)
-
-- form elements styling example
-
-  ```css
-  input[type='text'] {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    margin: 1rem 0;
-    border: 0.3rem solid orange;
-    border-radius: 0.5rem;
-  }
-
-  button {
-    background-color: sandybrown;
-    border: none;
-    border-radius: 0.5rem;
-    color: white;
-    cursor: pointer;
-    font-size: 1.5rem;
-    padding: 2rem 1rem;
-    width: 10rem;
-  }
-
-  select {
-    background-color: sandybrown;
-    padding: 1rem;
-    border: none;
-    border-radius: 0.5rem;
-  }
-
-  textarea {
-    resize: none;
-    width: 50rem;
-    padding: 1rem;
-    border: 0.3rem solid black;
-    border-radius: 0.5rem;
-  }
-  ```
-
-<br>
-
 ## Chapter 10: CSS Architecture: BEM Methodology - https://github.com/anisul-Islam/bem-methodology
 
 ## Chapter 11: Project
@@ -1393,6 +1392,10 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
 - [Project-5 Blog website Project part-7](https://youtu.be/Yu1KTrklb2k)
 - [Project-5 Blog website Project part-8](https://youtu.be/tVdtVVpddIE)
 - [Project-5 Blog website Project part-9](https://youtu.be/zUxzEpvTWdU)
+
+```
+
+```
 
 ```
 
