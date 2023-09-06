@@ -37,12 +37,12 @@
    - [Performance Optimization](#32-performance-optimization)
    - [How to design](#33-how-to-design)
    - [Projects](#34-projects)
-     - [CV Project](#341-cv-project)
-     - [CV Project](#342-calculator-project)
+     <!-- - [CV Project](#341-cv-project)
+     - [Calculator Project](#342-calculator-project)
      - [Portfolio Website](#343-portfolio-project)
      - [Restaurant Website](#344-restaurant-project)
      - [Blog Website](#345-blog-website-project)
-     - [Ecommerce Website](#346-e-commerce-website-project)
+     - [Ecommerce Website](#346-e-commerce-website-project) -->
 
 ## 1. Basic CSS
 
