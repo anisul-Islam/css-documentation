@@ -33,9 +33,16 @@
    - [Animation Properties](#26-animation-property)
    - [Styling tables and forms](#27-styling-tables-and-forms)
 3. [Advanced CSS](#3-advanced-css)
-   - [CSS Architecture]()
-   - [Ecommerce projects]()
-   - [Performance Optimization]()
+   - [CSS Architecture](#31-css-architecture-bem-methodology)
+   - [Performance Optimization](#32-performance-optimization)
+   - [How to design](#33-how-to-design)
+   - [Projects](#34-projects)
+     - [CV Project](#341-cv-project)
+     - [CV Project](#342-calculator-project)
+     - [Portfolio Website](#343-portfolio-project)
+     - [Restaurant Website](#344-restaurant-project)
+     - [Blog Website](#345-blog-website-project)
+     - [Ecommerce Website](#346-e-commerce-website-project)
 
 ## 1. Basic CSS
 
@@ -1235,65 +1242,20 @@
 
 ## 3. Advanced CSS
 
-## html and css basic setup
+### 3.1 CSS Architecture: BEM Methodology
 
-```html
-<header class="center">
-  <div class="header__circle center">Hello guys good morning!</div>
-</header>
-```
+- [BEM Architecture](https://github.com/anisul-Islam/bem-methodology)
 
-```css
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header {
-  height: 100vh; /* display: flex; justify-content: center; align-items: center;
-*/
-  background-color: green;
-}
-.header__circle {
-  width: 20rem;
-  height: 20rem;
-  background-color: brown;
-  color: white; /* display: flex; justify-content:
-center; align-items: center; */ /* making circle */
-  border-radius: 50%; /*
-triangel shape width: 0; height: 0; border-left: 50px solid transparent;
-border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
-}
-```
+### 3.2 Performance Optimization
 
-## Chapter 9: How to create/design
+### 3.3 How to design
 
-### [9.1 How to design a navigation menu](https://youtu.be/KS8EW01JE_I)
+#### 3.3.1 How to design a navigation menu
 
-- example
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="nav-menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Tutorials</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </body>
-</html>
-```
-
-### [9.2 How to center elements](https://youtu.be/K92e7WcJ5Xw)
+#### 3.3.2 How to center elements
 
 - using flex
+
   ```css
   .container {
     width: 30rem;
@@ -1309,7 +1271,9 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
     background-color: burlywood;
   }
   ```
+
 - using grid
+
   ```css
   .container {
     width: 30rem;
@@ -1324,6 +1288,7 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
     background-color: burlywood;
   }
   ```
+
 - using position
 
   ```css
@@ -1344,26 +1309,24 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
   }
   ```
 
-### [9.3 How to create linable icon button](https://youtu.be/blL-0Us1gWY)
+#### 3.3.3 How to create linable icon button
 
-### [9.4 How to create drop down menu](https://youtu.be/BoOzeYtc2hI)
+#### 3.3.4 How to create drop down menu
 
-## Chapter 10: CSS Architecture: BEM Methodology - https://github.com/anisul-Islam/bem-methodology
+### 3.4 Projects
 
-## Chapter 11: Project
-
-### Project 1 - CV Project
+#### 3.4.1 CV Project
 
 - [Project-1 - CV Project part-1](https://youtu.be/ekIv1HfA4fs)
 - [Project-1 - CV Project part-2](https://youtu.be/GwCFFzUKIpQ)
 - [Publish a website on github](https://youtu.be/cI-B554zaRw)
 
-### Project 2 - Calculator Project
+#### 3.4.2 Calculator Project
 
 - [Project-2- Calculator Project part-1](https://youtu.be/P7SnVyHKHGg)
 - [Project-2- Calculator Project part-2](https://youtu.be/5zPhBLGdJog)
 
-### Project 3 - Portfolio Project
+#### 3.4.3 Portfolio Project
 
 - [Project-3- Portfolio Project part-1](https://youtu.be/bPJSGlMxFeI)
 - [Project-3- Portfolio Project part-2](https://youtu.be/o_OnE2U1mN4)
@@ -1375,13 +1338,13 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
 - [Project-3- Portfolio Project part-8](https://youtu.be/dGUfT6xV0zw)
 - [Project-3- Portfolio Project part-9](https://youtu.be/k1oi5iEPe7M)
 
-### Project 4 - Restaurant Project
+#### 3.4.4 Restaurant Project
 
 - [Project-4- Restaurant Project part-1](https://youtu.be/uGpYBWsx27I)
 - [Project-4- Restaurant Project part-2](https://youtu.be/x5gz38hIpBI)
 - [Project-4- Restaurant Project part-3](https://youtu.be/kUnpOmva1-c)
 
-### Project 5 - Blog website Project
+#### 3.4.5 Blog website Project
 
 - [Project-5 Blog website Project part-1](https://youtu.be/tJ5LeCh9o_8)
 - [Project-5 Blog website Project part-2](https://youtu.be/RunsiJ3CFz8)
@@ -1393,10 +1356,4 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
 - [Project-5 Blog website Project part-8](https://youtu.be/tVdtVVpddIE)
 - [Project-5 Blog website Project part-9](https://youtu.be/zUxzEpvTWdU)
 
-```
-
-```
-
-```
-
-```
+#### 3.4.6 E-commerce website Project
