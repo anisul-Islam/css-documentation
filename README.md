@@ -14,8 +14,9 @@
    - [CSS Specificity](#14-css-specificity)
    - [Typography](#15-typography)
    - [Box Model](#16-box-model)
-     - [box-sizing, opacity, overflow](#162-box-sizing--opacity-overflow)
+     - [box-sizing, opacity, overflow, Visibility](#162-box-sizing-opacity-overflow-visibility)
      - [display-properties](#163-display-properties)
+   - [background properties](#17-background-properties)
    - [Box Model](#16-box-model)
 
 2. [Intermediate CSS]()
@@ -275,7 +276,7 @@
 
 - Attribute selectors
 
-  - References: https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+  - [References](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
   - syntax for Attribute selectors
 
     ```css
@@ -469,8 +470,8 @@
 
 ### Icon & emoji styling
 
-- Get emoji from here: https://unicode-table.com/en/
-- Get icon from here: https://www.iconfinder.com/
+- [Get emoji from here](https://unicode-table.com/en/)
+- [Get icon from here](https://www.iconfinder.com/)
 
   ```html
   <style>
@@ -510,23 +511,25 @@
     - border-color,border-top-color,border-right-color,border-bottom-color,border-left-color
   - Margin: Margin is the space outside the element's border. It can be set using properties like margin-top, margin-right, margin-bottom, and margin-left. Margins are used to control the spacing between elements on a webpage.
 
-### 1.6.2 box sizing & opacity, overflow:
+### 1.6.2 box sizing, opacity, overflow, visibility
 
 - box-sizing: border-box (padding and border are subtracted from the width and height of an element), content-box (default one)
 - `opacity: value;` value can be between 0-1
 - `overflow: value;` here default value is visible but we can use also hidden, auto, scroll
+- The visibility property in CSS is used to control the visibility of an HTML element. It can take one of the following values: visibile, hidden, none
 
 ### 1.6.3 display properties
 
 - It is used to control how an HTML element is rendered on a web page.
-- block: Elements with display: block create a block-level box. They typically start on a new line and stretch across the entire width of their parent container, stacking vertically. Examples include <div>, <p>, and <h1>.
+- block: Elements with display: block create a block-level box. They typically start on a new line and stretch across the entire width of their parent container, stacking vertically. Examples include `<div>`, `<p>`, and `<h1>`.
 
-- inline: Elements with display: inline generate an inline-level box. They flow within the content, appearing on the same line as adjacent inline elements. Examples include <span>, <a>, and <strong>.
-- inline-block: Elements with display: inline-block create a combination of inline and block-level behavior. They flow inline like inline elements but can have their own width and height, similar to block-level elements. This is useful for creating inline elements that can be styled with width and height properties.
+- inline: Elements with display: inline generate an inline-level box. They flow within the content, appearing on the same line as adjacent inline elements. Examples include `<span>`, `<a>`, and `<strong>`
+
+- inline-block: Elements with display: inline-block create a combination of inline and block-level behavior. They flow inline like inline elements but can have their own width and height, similar to block-level elements. This is useful for creating inline elements that can be styled with width and height properties. when use `a` tag check the border-top is working or not.
 
 - none: Elements with display: none are not displayed on the page at all. They are effectively hidden and do not take up any space in the layout. This is commonly used for hiding elements dynamically with JavaScript.
 
-- table: Elements with display: table mimic the behavior of HTML <table> elements, creating table-like structures. This value is often used in conjunction with other display values like table-row and table-cell for building table layouts without using actual <table> elements.
+- table: Elements with display: table mimic the behavior of HTML `<table>` elements, creating table-like structures. This value is often used in conjunction with other display values like table-row and table-cell for building table layouts without using actual `<table>` elements.
 
 - flex: Elements with display: flex become flexible containers. They allow their child elements to be distributed and aligned within them, making it easier to create responsive layouts with elements that grow or shrink as needed.
 
@@ -545,13 +548,71 @@
 }
 ```
 
-## Chapter 5: Background
+## 1.7 background properties
 
-### [5.1 How to set background image in webpage](https://youtu.be/RROYuj-xoCU)
+- CSS provides several background properties that allow you to control the background of HTML elements, such as text boxes, divs, and entire web pages. These properties enable you to set background colors, images, gradients, and other visual effects.
 
-- background-image, background-position, background-size, background-repeat, background-attachment
-- shorthand: `background: bg-image position/bg-size bg-repeat bg-attachment bg-origin bg-clip `
-- example
+  - background-color: This property sets the background color of an element.
+
+  ```css
+  .container {
+    background-color: #f0f0f0;
+  }
+  ```
+
+  - background-image allows you to set an image as the background of an element.
+
+    ```css
+    .header {
+      background-image: url('header-background.jpg');
+    }
+    ```
+
+  - background-repeat: This property controls how a background image is repeated when it doesn't cover the entire element. Common values include repeat (default), no-repeat, repeat-x, and repeat-y.
+
+  ```css
+  .content {
+    background-image: url('pattern.png');
+    background-repeat: repeat-x;
+  }
+  ```
+
+  - background-position: background-position determines the starting position of a background image within its container. You can use values like top, bottom, center, left, right, percentages, or length values.
+
+  ```css
+  .hero {
+    background-image: url('hero-image.jpg');
+    background-position: center top;
+  }
+  ```
+
+  - background-size: This property defines the size of a background image. You can use values like auto, cover, contain, or specific dimensions.
+
+  ```css
+  .featured {
+    background-image: url('featured-image.jpg');
+    background-size: cover;
+  }
+  ```
+
+  - background-attachment: background-attachment specifies whether a background image is fixed or scrolls with the content.
+
+  ```css
+  .parallax {
+    background-image: url('parallax-image.jpg');
+    background-attachment: fixed;
+  }
+  ```
+
+  - background (shorthand property): The background property allows you to set multiple background properties in one declaration. You can include background-color, background-image, background-repeat, background-position, background-size, and background-attachment within a single background declaration.
+
+  ```css
+  .button {
+    background: #007bff url('button-background.jpg') no-repeat center;
+  }
+  ```
+
+  - example
 
   ```css
   body {
@@ -567,10 +628,10 @@
   }
   ```
 
-### [5.2 gradient-linear/radial](https://youtu.be/RROYuj-xoCU)
+- gradient-linear/radial
 
-- background: linear-gradient(direction, colors)
-- example
+  - background: linear-gradient(direction, colors)
+  - example
 
   ```css
   .banner {
@@ -580,18 +641,16 @@
   }
   ```
 
-- background: radial-gradient(style-type, colors)
-- example
+  - background: radial-gradient(style-type, colors)
+  - example
 
-  ```css
-  .banner {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, green, orange);
-  }
-  ```
-
-<br>
+    ```css
+    .banner {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, green, orange);
+    }
+    ```
 
 ## Chapter 6: Layout design
 
@@ -1334,3 +1393,7 @@ border-right: 50px solid transparent; border-bottom: 100px solid #32557f; */
 - [Project-5 Blog website Project part-7](https://youtu.be/Yu1KTrklb2k)
 - [Project-5 Blog website Project part-8](https://youtu.be/tVdtVVpddIE)
 - [Project-5 Blog website Project part-9](https://youtu.be/zUxzEpvTWdU)
+
+```
+
+```
