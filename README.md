@@ -50,11 +50,6 @@
 
 ### 1.1 Introduction to CSS
 
-- Understand what CSS (Cascading Style Sheets) is and its role in web development.
-- Learn how CSS works alongside HTML to style and format web pages.
-
-#### What is CSS & Why CSS?
-
 - CSS stands for Cascading Style Sheets
 - It is used to style **html elements**
 - Initial release on December 17, 1996
@@ -782,9 +777,29 @@
 
 ### 2.1 flexbox layout
 
+- one directional latout.
 - ![flex](images/flex.png)
 
-- flex layout learning game: https://flexboxfroggy.com/
+- [flex layout learning game](https://flexboxfroggy.com/)
+- Properties for the Flex Container (Parent):
+
+  - display: To create a flex container, you set display: flex;
+  - flex-direction: This property defines the direction of the main axis and can be set to values like row, row-reverse, column, or column-reverse. It determines whether items are laid out horizontally or vertically.
+
+  - justify-content: It controls the alignment of items along the main axis. Values include flex-start, flex-end, center, space-between, and space-around.
+
+  - align-items: This property controls the alignment of items along the cross axis. Values include flex-start, flex-end, center, baseline, and stretch.
+
+  - flex-wrap: It determines whether items should wrap onto a new line when they don't fit within the container. Values include nowrap, wrap, and wrap-reverse.
+
+- Properties for Flex Items (Children):
+
+  - flex: The flex property is a shorthand for flex-grow, flex-shrink, and flex-basis. It controls how items grow or shrink relative to each other within the container.
+
+  - order: Use the order property to change the visual order of flex items. By default, items have an order of 0, but you can assign positive or negative values to reorder them.
+
+  - align-self: This property allows you to override the alignment set by align-items for individual flex items. It accepts values like auto, flex-start, flex-end, center, and stretch.
+
 - example
 
   ```css
@@ -798,7 +813,8 @@
   .flex-item1 {
     order: 2;
     flex-basis: 30%;
-    flex: 1;
+    align-self: center;
+    flex: 1; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
   }
   .flex-item2 {
     order: 1;
@@ -809,6 +825,9 @@
 
 ### 2.2 Grid Layout
 
+- Two-Dimensional Layouts: CSS Grid Layout is designed for two-dimensional grid-based layouts, where you need to control both rows and columns. It's excellent for creating complex, structured layouts like grids of images or tables.
+- Grid is well-suited for creating grid-based designs, such as image galleries, card-based layouts, and magazine-style layouts where items need to align both vertically and horizontally.
+- Grid can be used alongside media queries to create responsive layouts. You can change the grid structure or the placement of items at different screen sizes.
 - example
 
   ```css
@@ -946,9 +965,42 @@
 
 ### 2.3 Responsive web design (RWD)
 
+- Responsive web design is an approach to web design and development that aims to make web pages and web applications render well on a variety of devices and screen sizes. It's about designing and building websites that adapt and respond to different viewing environments, ensuring an optimal user experience regardless of whether the user is on a desktop computer, laptop, tablet, smartphone, or other devices.
+
+- max size 480 mobile device, 768 ipads tablets, 992 laptops, 1024 desktop large screens, 1200 extra large screens TV
 - Use box-sizing `box-sizing: border-box`
 - Use media query
 - Use media end points
+
+  - example
+
+    ```css
+    .row {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 1rem;
+      background-color: aqua;
+      padding: 2rem;
+    }
+    .col {
+      height: 10rem;
+      background-color: wheat;
+      display: grid;
+      place-items: center;
+    }
+
+    /* 480 mobile device, 768 ipads tablets, 1024 desktop large screens, 1200 extra large screens TV  */
+    @media screen and (max-width: 1024px) {
+      .row {
+        grid-template-columns: auto auto;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .row {
+        grid-template-columns: auto;
+      }
+    }
+    ```
 
 ### 2.4 transform property
 
