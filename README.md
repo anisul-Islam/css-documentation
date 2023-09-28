@@ -1007,6 +1007,7 @@
 
 ### 2.4 transform property
 
+- transform property allows us to do 2d or 3d effect to any elements.
 - transform property has 4 differnt values
 
   - transform: scale(number)
@@ -1117,6 +1118,61 @@
     ```
 
 ### 2.6 animation property
+
+- transition is a single time effect not continuous where as animation is continuous
+- CSS offers a range of animation properties and values that allow you to create and control animations on web elements. Here are some of the key CSS animation properties:
+
+1. **`animation-name`**:
+
+   - Specifies the name of the `@keyframes` rule that defines the animation's behavior.
+   - Example: `animation-name: slide-in;`
+
+2. **`animation-duration`**:
+
+   - Sets the duration of the animation in seconds (s) or milliseconds (ms).
+   - Example: `animation-duration: 2s;`
+
+3. **`animation-timing-function`**:
+
+   - Defines the acceleration curve for the animation. It determines how the animation progresses over time.
+   - Common values include `linear`, `ease`, `ease-in`, `ease-out`, `ease-in-out`, and `cubic-bezier()`.
+   - Example: `animation-timing-function: ease;`
+
+4. **`animation-delay`**:
+
+   - Specifies the delay before the animation starts, in seconds (s) or milliseconds (ms).
+   - Example: `animation-delay: 1s;`
+
+5. **`animation-iteration-count`**:
+
+   - Sets the number of times the animation should repeat.
+   - You can use values like `infinite`, `1`, `2`, etc.
+   - Example: `animation-iteration-count: 3;`
+
+6. **`animation-direction`**:
+
+   - Determines whether the animation plays forwards, backward, alternates between forward and backward, or stays in place.
+   - Values include `normal`, `reverse`, `alternate`, and `alternate-reverse`.
+   - Example: `animation-direction: alternate;`
+
+7. **`animation-fill-mode`**:
+
+   - Specifies how the element styles should be applied before and after the animation.
+   - Values include `none`, `forwards`, `backwards`, and `both`.
+   - Example: `animation-fill-mode: forwards;`
+
+8. **`animation-play-state`**:
+
+   - Controls whether the animation is running or paused.
+   - Values are `running` and `paused`.
+   - Example: `animation-play-state: paused;`
+
+9. **`animation`** (shorthand property):
+   - Combines the above animation properties into a single declaration.
+   - The order is: `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`.
+   - Example: `animation: slide-in 2s ease 1s infinite alternate forwards;`
+
+These properties can be used individually or together to define and customize animations in CSS. You'll typically use them in conjunction with the `@keyframes` rule, which defines the actual animation behavior by specifying keyframes at different points in time. Together, these properties give you fine-grained control over how elements move, change, and transition on your web page.
 
 - example
 
