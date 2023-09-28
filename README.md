@@ -1411,3 +1411,40 @@
 - [Project-5 Blog website Project part-9](https://youtu.be/zUxzEpvTWdU)
 
 #### 3.4.6 E-commerce website Project
+
+### 3.5 Challenge
+
+- challenge 1 : design the following with 2 divs (parent and child) inside the body tag. you can use positioning, flex or grid
+  [!img](images/challenge1.png)
+
+  ```css
+  body {
+    position: relative;
+    height: 100vh;
+  }
+
+  .parent {
+    background-color: bisque;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    position: relative;
+  }
+  .child {
+    background-color: pink;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  ```
