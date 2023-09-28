@@ -35,6 +35,7 @@
    - [Animation Properties](#26-animation-property)
    - [Styling tables and forms](#27-styling-tables-and-forms)
 3. [Advanced CSS](#3-advanced-css)
+
    - [CSS Architecture](#31-css-architecture-bem-methodology)
    - [Performance Optimization](#32-performance-optimization)
    - [How to design](#33-how-to-design)
@@ -45,6 +46,8 @@
      - [Restaurant Website](#344-restaurant-project)
      - [Blog Website](#345-blog-website-project)
      - [Ecommerce Website](#346-e-commerce-website-project) -->
+
+   - [Challenges](#35-challenge)
 
 ## 1. Basic CSS
 
@@ -1072,20 +1075,20 @@
 
 ### 2.5 transition property
 
-- transition properties
+- transition (changing states) properties
 
   - transition-property
   - transition-duration
   - transition-delay
-  - transition-timing-function
+  - transition-timing-function (speed of transition)
   - transition
     [some animations can be attractive however sometime they can cause accessibility issues and also cause migraine]
 
     ```css
-    /* transition-property: background-color;
+    /* transition-property: background-color color or all;
     transition-duration: 1s;
     transition-timing-function: linear;
-    transition-delay: 2s;
+    transition-delay: 0.5s;
     */
 
     <!-- shrothand  -->
